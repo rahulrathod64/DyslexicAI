@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 const Button = ({props}) => {
    const router=useRouter();
   const handleLogin=()=>{
-    if(props==='welcome') router.push(`/${props}`);
+    if(props==='welcome') router.push(`/role-selection`);
     else  router.push(`/${props}/1`);
   }
   return (

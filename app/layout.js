@@ -2,6 +2,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import ChatbotWidget from "@/components/chatbot";
+import { UserProvider } from "@/context/UserContext";
+import { GameProvider } from "@/context/GameContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,11 +27,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-white`}
       >
+        
         <div className="black">
+          <UserProvider>
+          <GameProvider>
         <Navbar/>
         {children}
+        <ChatbotWidget/>
         <Footer/>
+        </GameProvider>
+        </UserProvider>
           </div>
+    
       </body>
     </html>
   );
