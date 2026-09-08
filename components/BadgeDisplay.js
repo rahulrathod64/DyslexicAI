@@ -37,7 +37,7 @@ const BadgeDisplay = ({ badges, highlightId }) => {
     return (
       <div className="bg-indigo-800/30 rounded-xl p-8 text-center">
         <p className="text-indigo-200 mb-4">
-          You haven't earned any badges yet. Play games to start collecting badges!
+          You haven&apos;t earned any badges yet. Play games to start collecting badges!
         </p>
         <div className="flex justify-center space-x-4 opacity-40">
           <div className="w-16 h-16 rounded-full border-2 border-dashed border-indigo-400 flex items-center justify-center">
