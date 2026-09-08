@@ -45,7 +45,7 @@ export default function StudentLogin() {
         </button>
 
         <p className="mt-6 text-center text-sm text-gray-400">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <a href="/login/student" className="text-purple-500 hover:underline">Sign Up</a>
         </p>
       </div>

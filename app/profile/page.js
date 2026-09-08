@@ -232,7 +232,7 @@ const OverviewSection = ({ gameStats, totalGames, user }) => (
       </div>
     ) : (
       <p className="text-indigo-300 bg-indigo-800/20 rounded-lg p-6 text-center">
-        You haven't played any games yet.
+        You haven&apos;t played any games yet.
       </p>
     )}
 
