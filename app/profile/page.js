@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from 'react';
-import { useUser } from '../context/UserContext';
+import { useUser } from '../../context/UserContext';
 import {
   Settings,
   User as UserIcon,
@@ -9,13 +10,13 @@ import {
   TrendingUp,
   Medal,
 } from 'lucide-react';
-import BadgeDisplay from './BadgeDisplay';
+import BadgeDisplay from '../../components/BadgeDisplay';
 
 const Profile = () => {
   const { user, updateUser } = useUser();
   const [editMode, setEditMode] = useState(false);
   const [username, setUsername] = useState('');
-  const [activeTab, setActiveTab] = useState<'overview' | 'badges' | 'stats'>('overview');
+  const [activeTab, setActiveTab] = useState('overview');
 
   if (!user) {
     return <div className="text-center p-10">Loading...</div>;
