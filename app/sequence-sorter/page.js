@@ -8,6 +8,8 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'rec
 import { qModel } from '@/utils/qlearning';
 import { useUser } from '@/context/UserContext';
 import { useGame } from '@/context/GameContext';
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 const MONTH_SERIES = [
   ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -52,7 +54,32 @@ const SEQUENCES = {
     time: 55,
   },
 };
+function SortableItem({ id, children }) {
+    const {
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
+    } = useSortable({ id });
 
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition,
+    };
+
+    return (
+        <div
+            ref={setNodeRef}
+            style={style}
+            {...attributes}
+            {...listeners}
+            className="bg-gray-700 p-4 rounded-lg cursor-grab hover:bg-gray-600"
+        >
+            {children}
+        </div>
+    );
+}
 export default function SequenceSorterGame() {
   const { user, updateGameStats } = useUser();
   const { addScore } = useGame();
